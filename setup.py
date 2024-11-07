@@ -6,6 +6,7 @@ setup(
     name="callisto",
     version=__version__,
     packages=find_packages(),
+    requires=["rich"],
     extras_require={
         "dev": [
             "setuptools>65.5.0",

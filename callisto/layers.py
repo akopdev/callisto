@@ -7,9 +7,7 @@ import pickle
 from collections import OrderedDict
 from dataclasses import dataclass
 from logging import getLogger
-from typing import Callable, Dict, Generic, TypeVar
-
-from typing_extensions import Optional
+from typing import Callable, Dict, Generic, Optional, TypeVar
 
 log = getLogger(__name__)
 

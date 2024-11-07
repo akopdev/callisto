@@ -4,12 +4,16 @@ from collections import OrderedDict
 from functools import partial, wraps
 from typing import Callable, Dict, Optional
 
+from rich.console import Console
+from rich.progress import Progress
+
 from .layers import Layers
 
 
 class Callisto:
     def __init__(self):
         self._tasks: Dict[str, Callable] = OrderedDict()
+        self.console = Console()
 
     def task(self, func: Optional[Callable] = None, *, name: Optional[str] = None) -> Callable:
         if func is None:
@@ -35,6 +39,12 @@ class Callisto:
         # Initialise layers from tasks
         self._layers = Layers(self._tasks)
         # Run tasks
-        for name, task in self._tasks.items():
-            result = self._layers.add(task, name)
-        return result
+        progress = Progress(auto_refresh=False)
+        with progress:
+            for name, task in progress.track(self._tasks.items(), description="Total progress"):
+                progress.log(
+                    f"Starting [bold yellow]{name}[/bold yellow]",
+                )
+                result = self._layers.add(task, name)
+                progress.log(f"Task [bold green]{name}[/bold green] is complete")
+            return result

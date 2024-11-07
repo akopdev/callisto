@@ -1,15 +1,15 @@
 Callisto
 ========
 
-A zero dependency micro-framework, to perform machine learning experiments without jupyter notebooks.
+Micro-framework, to perform machine learning experiments without jupyter notebooks.
 
 The main goal of Callisto is to provide a simple task orchestrator to manage the execution of data pipelines and 
 effectively manage results. Just like a jupyter notebook allows you to execute only parts of the code, 
-Callisto will cache unchanged tasks, and execute only the necessary steps, allowing you to run pipelines multiple 
+Callisto will cache unchanged tasks, and execute only necessary steps, allowing you to run pipelines multiple 
 times with the expected results.
 
-You can also use Callisto to manage task result dependencies, by requesting already computed output of one task 
-as input for another.
+You can also use Callisto to manage cross task data, by requesting already computed output of one task 
+as an input for another.
 
 
 ## Installation
@@ -52,9 +52,9 @@ result = app.run()
 print(result)
 ```
 
-After the first execution of the pipeline, the output will be cached and on second execution you will get results without
-executing any of tasks. However, go and change code in a `step2` method, and Callisto will automatically detect the change
-and recompute the output for both steps 2 and 3.
+After the first run of the pipeline, the output will be cached and on second execution you will get results without
+actual run any of tasks, saving time and computational resources. However, changing code, let's say, in a `step2` 
+method will be automatically detected by Callisto, and both steps 2 and 3 will be executed.
 
 ## Development setup
 
