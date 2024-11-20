@@ -1,10 +1,8 @@
 from setuptools import find_packages, setup
 
-from callisto import __version__
-
 setup(
     name="callisto",
-    version=__version__,
+    version="0.1.0",
     packages=find_packages(),
     requires=["rich"],
     extras_require={
