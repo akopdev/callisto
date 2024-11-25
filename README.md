@@ -67,6 +67,7 @@ This project (and a concept in general), under heavy development. No public cont
 - [ ] Show task title and description based on the docstring
 - [ ] Let task overwrite artifacts
 - [ ] Add support for `no_cache` flag in tasks (should help when you write tasks and want to debug)
+- [ ] Come up with a better way to handle multiple variables in output
 
 
 ## Development setup

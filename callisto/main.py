@@ -172,5 +172,5 @@ class Callisto(Generic[T]):
                     f"Starting [bold yellow]{name}[/bold yellow]",
                 )
                 result = self.run_task(task, name)
-                progress.log(f"Task [bold green]{name}[/bold green] is complete")
+                progress.log(f"Task [bold green]{name}[/bold green] is completed")
             return result
