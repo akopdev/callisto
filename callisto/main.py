@@ -122,8 +122,7 @@ class Callisto(Generic[T]):
 
     def get_layer_id(self, name: str) -> Optional[T]:
         """Get layer id by name."""
-        if layer := self._layers.get(name):
-            return layer
+        return self._layers.get(name)
 
     def get_task_id(self, task: Callable) -> str:
         """Create task id from the source code."""
@@ -144,8 +143,7 @@ class Callisto(Generic[T]):
 
     def get_layer_artifact(self, id: str) -> Optional[T]:
         """Get artifact by layer id."""
-        if artifact := self._artifacts.get(id):
-            return artifact
+        return self._artifacts.get(id)
 
     def add_artifact(self, name: str, artifact: T) -> T:
         """Add artifact to the layer."""
