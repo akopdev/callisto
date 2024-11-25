@@ -56,6 +56,19 @@ After the first run of the pipeline, the output will be cached and on second exe
 actual run any of tasks, saving time and computational resources. However, changing code, let's say, in a `step2` 
 method will be automatically detected by Callisto, and both steps 2 and 3 will be executed.
 
+## TO-DO
+
+This project (and a concept in general), under heavy development. No public contract is guaranteed at this point.
+
+- [X] Add support for runtime artifacts (settings)
+- [X] Add support for multiple run with different settings
+- [ ] Terminate pipeline if task raised an exception
+- [ ] All stdout should be captured
+- [ ] Show task title and description based on the docstring
+- [ ] Let task overwrite artifacts
+- [ ] Add support for `no_cache` flag in tasks (should help when you write tasks and want to debug)
+
+
 ## Development setup
 
 In unix-like environment, you can use `make` to run pre-defined commands, like `make init` to install virtual environment, 
