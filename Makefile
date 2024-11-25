@@ -43,7 +43,7 @@ install:
 # test: @ Run tests using pytest
 # -------------------------------------------------------------------------------------------------
 test:
-	$(PYTHON) pytest tests --cov=.
+	$(PYTHON) pytest tests -x --cov=$(APP)
 
 # -------------------------------------------------------------------------------------------------
 # format: @ Format source code and auto fix minor issues
